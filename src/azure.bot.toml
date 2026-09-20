@@ -1,0 +1,15 @@
+[settings]
+agent_id = "azure1s"
+name = "azure1s"
+loadout_file = "loadout.toml"
+run_command = "python bot.py" 
+run_command_linux = "python3 bot.py"
+logo_file = "azure_logo.png"
+
+[details]
+developer = "Azurus41"
+description = "Utilsless python bot mainly decent in teammodes, can fly and do some cool stuff... it can own-goal too though"
+fun_fact = "The peak rank of this author's bot is silver 1..." 
+source_link = ""
+language = "python"
+tags = ["1v1", "teamplay"]

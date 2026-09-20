@@ -1,0 +1,18 @@
+[settings]
+agent_id = "CrabbyCrab101/PartyCannon/v@"
+name = "PARTY CANNON V@"
+loadout_file = "loadout.toml"
+root_dir = ""
+run_command = ".\\Bot\\bin\\Release\\net8.0\\Bot.exe"
+# run_command_linux = "dotnet run --project ./Bot -c \"Release\""
+
+[details]
+description = "RedUtils Bot Named After A Grindcore Band! This bot's code was temporarily lost and had to be recovered via decompilation."
+fun_fact = "V@ Stands for Version 2"
+source_link = "https://github.com/ItsCodeRed/RedUtilsV5"
+developer = "CrabbyCrab101"
+language = "C#"
+# ALL POSSIBLE TAGS: 1v1, teamplay, goalie, hoops, dropshot, snow-day, spike-rush, heatseaker, memebot
+# NOTE: Only add the goalie tag if your bot only plays as a goalie; this directly contrasts with the teamplay tag!
+# NOTE: Only add a tag for a special game mode if you bot properly supports it
+tags = ["1v1", "teamplay"]

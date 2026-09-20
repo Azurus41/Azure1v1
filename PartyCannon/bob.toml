@@ -1,0 +1,7 @@
+[[config]]
+project_name = "PartyCannonV2"
+bot_configs = ["bot.toml"]
+
+[config.builder_config]
+builder_type = "csharp"
+base_dir = "Bot"
