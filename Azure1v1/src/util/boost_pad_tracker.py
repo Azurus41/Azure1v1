@@ -2,7 +2,7 @@ from dataclasses import dataclass, field
 
 from rlbot.flat import FieldInfo, GamePacket
 
-from util.vec import Vec3
+from FinetuneAzure1v1.Azure1v1.src.util.vec import Vec3
 
 
 @dataclass(slots=True)

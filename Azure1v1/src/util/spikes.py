@@ -3,7 +3,7 @@ from dataclasses import dataclass
 
 from rlbot.flat import GamePacket, PlayerInfo
 
-from util.vec import Vec3
+from FinetuneAzure1v1.Azure1v1.src.util.vec import Vec3
 
 # When the ball is attached to a car's spikes, the distance will vary a bit depending on whether the ball is
 # on the front bumper, the roof, etc. It tends to be most far away when the ball is on one of the front corners

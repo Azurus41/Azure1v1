@@ -2,8 +2,8 @@ import math
 
 from rlbot.flat import PlayerInfo
 
-from util.orientation import Orientation, relative_location
-from util.vec import Vec3
+from FinetuneAzure1v1.Azure1v1.src.util.orientation import Orientation, relative_location
+from FinetuneAzure1v1.Azure1v1.src.util.vec import Vec3
 
 
 def limit_to_safe_range(value: float) -> float:
