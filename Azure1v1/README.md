@@ -1,50 +1,48 @@
-# RLBotPythonExample
+# Azure 1v1
 
-Example of a Python bot using the RLBot framework
+A pure-Python Rocket League bot for RLBot. It is a deterministic action-based
+bot inspired primarily by the recovered **Party Cannon** C# source, with useful
+prediction ideas from Noob Black.
 
-Wiki: [RLBot/python-interface/wiki](https://github.com/RLBot/python-interface/wiki)
+## Capabilities
 
-## Quick Start
+- Party-style time-aware shot selection and target geometry
+- ground/power shots, jump shots, double-jump shots, and boosted aerials
+- emergency saves, goal-line defense, and safe clears
+- controllable dribbles and ball carrying
+- full-boost selection with availability and teammate checks
+- kickoff speed flip, dodges, half flips, wavedashes, and recovery
+- turn-aware ground control, delayed boost, and deterministic 120 Hz actions
 
-1. Install Python 3.11 or later
-1. Create a Python virtual environment
-   - `python3 -m venv venv`
-1. Activate the virtual environment
-   - Windows: `.\venv\Scripts\activate`
-   - Linux: `source venv/bin/activate`
-1. Install the required packages
-   - `pip install -r requirements.txt`
-1. Download `RLBotServer.exe` and place it in the root directory
-   - <https://github.com/RLBot/core>
-1. Modify `rlbot.toml` to your liking
-   - Note: `dev.toml` also exists with a few changed settings that might be useful for development
-1. Start a match with `python run.py`
+## Run
 
-## Changing the bot
+```powershell
+python -m pip install -r requirements.txt
+python run.py
+```
 
-- Bot behavior is controlled by `src/bot.py`
-- Bot appearance is controlled by `src/loadout.toml`
+Edit `rlbot.toml` to choose the car/team. The default configuration runs a
+human blue car and Azure orange. For development, use `dev.toml` and
+`python src/bot.py`; it leaves agent startup to you.
 
-## Configuring for the v5 botpack
+## Validate
 
-1. `pip install pyinstaller`
-1. `pyinstaller --onefile src/bot.py --paths src` -
-  This will create a file called `bot.spec`.
-1. Create `bob.toml` in the same directory as the spec file with the following content:
-   ```toml
-   [[config]]
-   project_name = "PythonExample"
-   bot_configs = ["src/bot.toml"]
+```powershell
+python -m unittest discover -s tests -v
+python -m compileall -q src
+```
 
-   [config.builder_config]
-   builder_type = "pyinstaller"
-   entry_file = "bot.spec"
-   ```
+The `src/azure` package is the implementation. `src/bot.py` is only the RLBot
+entry point. The old deleted `src/bot_backup.py` has deliberately not been
+restored or modified.
 
-   - `project_name` will be the name of your bot's folder in the botpack
-   - `bot_configs` is a list of bot configs that will be included in the botpack
-   - `builder_type` should always be `pyinstaller`
-   - `entry_file` is the name of the spec file
+## Tuning
 
-1. Commit both `bot.spec` and `bob.toml` to your bot's repository.
-  Note that `bob.toml` CANNOT be renamed, but `bot.spec` can be anything as long as `entry_file` is also renamed to reflect the change.
+Physics constants are in `src/azure/constants.py`. Strategy priorities and
+thresholds are in `src/azure/strategy.py`; action timing is in
+`src/azure/actions.py`.
+
+Party Cannon is the main behavioral reference. This Python implementation is
+not a literal source translation: it keeps the action model and control ideas
+while using RLBot's native ball prediction, modern packet model, and a testable
+Python architecture.

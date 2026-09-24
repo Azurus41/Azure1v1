@@ -1,6 +1,6 @@
 [settings]
-agent_id = "azure1s"
-name = "azure1s"
+agent_id = "SelfishAzure"
+name = "Selfish"
 loadout_file = "loadout.toml"
 run_command = "python bot.py" 
 run_command_linux = "python3 bot.py"
@@ -8,8 +8,8 @@ logo_file = "azure_logo.png"
 
 [details]
 developer = "Azurus41"
-description = "Utilsless python bot mainly decent in teammodes, can fly and do some cool stuff... it can own-goal too though"
-fun_fact = "The peak rank of this author's bot is silver 1..." 
+description = "Deterministic 1v1 bot with Party Cannon-inspired driving, saves, power shots, jumps, aerials, boost routing, and dribbles."
+fun_fact = "Built from the ground up in Python; Party Cannon remains the main behavioral reference."
 source_link = ""
 language = "python"
 tags = ["1v1", "teamplay"]

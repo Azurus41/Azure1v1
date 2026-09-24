@@ -12,5 +12,5 @@ enable_rendering = true
 match_length = "Unlimited"
 
 [[cars]]
-config_file = "src/bot.toml"
+config_file = "src/azure.bot.toml"
 team = 0
